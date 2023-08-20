@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Preahvihear&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Preahvihear&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Preahvihear', sans-serif;
+    text-decoration: none;
+    list-style: none;
+}
+body{
+    background: url(img/gear5.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: background-image 0.2s ease-in-out;
+}
+header{
+    overflow: hidden;
+    position: relative;
+    top: 0;
+    left: 0;
+    padding: 10px 40px;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-around;
+}
+.container-icon{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: rgba(0, 0, 0, 0.24);
+    border-radius: 10%;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.24);
+}
+.container-icon span{
+    color: rgb(0, 110, 255);
+    animation: brilho 4s ease-in infinite;
+}
+.container-icon span:nth-child(1){
+    animation-delay: 0.25s;
+}
+.container-icon span:nth-child(2){
+    animation-delay: 0.50s;
+}
+.container-icon span:nth-child(3){
+    animation-delay: 0.75s;
+}
+.container-icon span:nth-child(4){
+    animation-delay: 1s;
+}
+@keyframes brilho{
+    0%{
+        color: rgb(255, 255, 255);
+        text-shadow: 0px 0px 12px rgb(0, 81, 255),
+        0px 0px 20px rgb(0, 17, 255),
+        0px 0px 40px blue;
+    }
+    10%, 90%{
+        color: rgb(0, 110, 255);
+        text-shadow: none;
+    }
+}
+.container-icon img{
+    height: 80px;
+    width: 80px;
+    object-fit: cover;
+}
+.container{
+    position: relative;
+    padding: 20px 80px;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 10px;
+}
+.container p{
+    color: aliceblue;
+    font-size: 2.9rem;
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 2px;
+    text-shadow: 2px 1px 5px black,
+                 3px 1px 6px black;
+}
+.container .btn{
+    padding: 20px 20px;
+    border-radius: 20% 20%;
+    border: none;
+    outline: none;
+    color: rgb(0, 136, 255);
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 0px 20px black inset;
+    transition: transform 0.2s ease-in-out;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2rem;
+    letter-spacing: 3px;
+    cursor: pointer;
+}
+.container .btn:active{
+    transform: scale(1.1);
+}
+.cards{
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    margin-left: 24rem;
+}
+.cards .card{
+    height: 15rem;
+    max-width: 10rem;
+    border-radius: 10% 10%;
+    box-shadow: 5px 0px 15px black;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    overflow: hidden;
+}
+.cards .card img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.cards .card:hover{
+    transform: translateY(-18px) rotate(4deg);
+}
+.cards .card:hover ~ .card{
+    transform: translateX(140px);
+}
+@media (max-width: 480px){
+    body{
+        background: url(img/mobileGear5.jpeg);
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    .container p{
+        text-align: center;
+        padding: 40px;
+        font-size: 1.8rem;
+        height: 1.5rem;
+    }
+    .cards{
+        flex-direction: column;
+        margin-left: 0px;
+    }
+    .cards .card{
+        height: 9rem;
+        max-width: 8rem;
+    }
+    .container .btn{
+        padding: 15px 15px;
+        border-radius: 10%;
+        border: none;
+        outline: none;
+        color: rgb(0, 136, 255);
+        background-color: rgb(255, 255, 255);
+    }
+}
